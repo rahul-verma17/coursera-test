@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="MsgApp">
+
+<head>
+    <meta charset="utf-8" />
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <style>
+        body {
+            font-size: 1.5em;
+        }
+    </style>
+    <title>Custom Filters</title>
+</head>
+
+<body>
+    <h1>Custom Filters</h1>
+    <div ng-controller="MsgController">
+        Original: {{sayMessage()}}<br> Loves: {{sayLovesMessage()}}<br> Truth: {{sayLovesMessage() | truth : 'it' : 'cookies'}}<br> BIG TRUTH:{{sayLovesMessage() | truth : 'it' : 'cookies' | uppercase}}
+        <div>
+            <button ng-click="getEmotion()">Get Emotion</button> {{cookiecost | currency : '%' : 3}}
+            <br>
+            <img ng-src="images/emotion-{{stateOfEmotion}}.png">
+        </div>
+    </div>
+</body>
+
+</html>
